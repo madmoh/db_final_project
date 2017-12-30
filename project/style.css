@@ -1,0 +1,398 @@
+/******** theme variables /********/
+:root {
+	--theme-color: #1178f1; /* blue */
+	--red-color: #e82323; /* error */
+	--orange-color: #f3c119; /* warning */
+	--green-color: #61ca0e; /* success */
+}
+
+/******** shared styling ********/
+.hidden {
+	display: none;
+}
+body {
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, a, span, p, th, tr {
+	font-family: sans-serif;
+}
+h1 {
+	text-align: center;
+}
+a {
+	color: var(--theme-color);
+	cursor: pointer; 
+	text-decoration: none;
+}
+a:hover {
+	filter: brightness(0.8);
+}
+.header {
+    margin-bottom: 30px;
+    padding: 20px 0;
+	background: var(--theme-color);
+	color: white;
+}
+.main-container {
+	max-width: 1280px;
+	margin: auto;
+	padding: 0 5px;
+}
+.notification {
+	background: lightgray;
+    color: white;
+    padding: 5px 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+.error-notification {
+	background: var(--red-color);
+}
+.warning-notification {
+	background: var(--orange-color);
+}
+.success-notification {
+	background: var(--green-color);
+}
+/* button styling */
+button {
+	display: block;
+	background: var(--theme-color);
+	color: white;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+	cursor: pointer;
+}
+button:hover {
+	filter: brightness(1.2);
+}
+button:focus {
+	outline: none;
+	filter: brightness(1);
+}
+.invalid {
+	border: 1px solid var(--red-color);
+}
+.disabled, .disabled:hover, .disabled:focus {
+	background: gray !important;
+	filter: brightness(1);
+}
+.prohibited {
+	cursor: not-allowed !important;
+}
+
+/******** login page styling ********/
+#login-form {
+	width: 100%;
+	max-width: 560px;
+	margin: 0 auto;
+}
+form div, form div div {
+	display: block;
+	margin-bottom: 20px;
+}
+div span {
+	width: 29%;
+	display: inline-block;
+	vertical-align: bottom;
+}
+div input {
+	width: 70%;
+	height: 35px;
+	display: inline-block;
+	padding: 5px;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+div input:focus {
+	outline: none;
+	box-shadow: 0px 0px 2px var(--theme-color);
+}
+
+#login-form button {
+  width: 70%;
+  height: 35px;
+	margin: auto 1% auto auto;
+}
+#new-account, #admin {
+	display: block;
+  width: fit-content;
+  margin: 10px 1% auto auto;
+}
+
+/* password strength progress bar styling */
+progress {
+	background-color: #ececec;
+	display: block;
+  width: 70%;
+	height: 16px;
+  position: relative;
+  top: -15px;
+  margin: auto 1% auto auto;
+	border: 0;
+	border-radius: 8px;
+}
+progress::-webkit-progress-bar {
+	background-color: #ececec;
+	border-radius: 8px;
+}
+progress::-webkit-progress-value {
+	background: var(--red-color);
+	border-radius: 8px;
+}
+progress::-moz-progress-bar {
+	background: #ececec;
+	background: var(--red-color);
+	border-radius: 8px;
+}
+.progress-40::-webkit-progress-value {
+	background: var(--orange-color);
+}
+.progress-40::-moz-progress-bar {
+	background: #ececec;
+	background: var(--orange-color);
+}
+.progress-80::-webkit-progress-value {
+	background: var(--green-color);
+}
+.progress-80::-moz-progress-bar {
+	background: #ececec;
+	background: var(--green-color);
+}
+
+/******** info page styling ********/
+#log-out {
+    padding: 4px 8px;
+    margin: 0 0 10px auto;
+}
+.info-container {
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: 100%;
+	grid-template-areas: "profile-summary" "cars";
+}
+@media (min-width: 720px) {
+	.info-container {
+		display: grid;
+		grid-gap: 5px;
+		grid-template-columns: 40% 60%;
+		grid-template-areas: "profile-summary cars";
+	}
+}
+.profile-summary, .cars {
+	padding: 5px;
+}
+#profile-grid-container form div input, #profile-grid-container form div progress {
+	width: 100%;
+}
+.profile-grid div progress {
+	top: auto;
+    margin: 10px 0;
+}
+#registration progress {
+	margin: 0 6px 10px auto;
+}
+form #delete-driver {
+	grid-column-start: 1;
+    grid-column-end: 2;
+    width: 100%;
+	background: var(--red-color);
+}
+form #update-driver {
+	grid-column-start: 2;
+    grid-column-end: 3;
+    width: 100%;
+}
+.profile-grid {
+	display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.cars-search {
+	display: block;
+}
+.profile-cars-heading, .inline-link-text {
+	display: inline-block;
+}
+.inline-link-text {
+	margin: 20px 0 20px 10px;
+    align-self: flex-end;
+    line-height: 1.4em;
+}
+.cars-search form {
+	display: flex;
+    margin: 10px 0 10px auto;
+}
+#search-input {
+	width: auto;
+	margin: auto 0 auto auto;
+}
+#search-button {
+	display: inline-block;
+    height: 35px;
+    padding: 0 15px;
+}
+@media (min-width: 440px) {
+	.cars-search {
+		display: flex;
+	}
+	.cars-search form {
+		display: inline-block;
+		margin: 10px 0 10px auto;
+	}
+}
+.cars-info {
+	border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+}
+.table-header {
+	width: 100%;
+}
+.table-header tbody tr {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+#add-car {
+	display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 35px);
+    grid-gap: 5px;
+	margin-bottom: 20px;
+}
+#update-car {
+	display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 35px);
+    grid-gap: 5px;
+}
+#update-car:not(:last-child) {
+	margin-bottom: 20px;
+}
+#add-car input, #update-car input {
+	width: 100%;
+}
+#add-car button {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 0 15px;
+    float: right;
+	grid-column-start: 1;
+    grid-column-end: 5;
+}
+#update-car button {
+    height: 35px;
+}
+#delete-car-button {
+	background: var(--red-color);
+	grid-column-start: 1;
+    grid-column-end: 3;
+}
+#update-car-button {
+	grid-column-start: 3;
+    grid-column-end: 6;
+}
+.cars-table table {
+	width: 100%;
+}
+.cars-table table tbody tr {
+	height: 35px;
+}
+.cars-table table tbody tr td {
+	width: 19%;
+	padding: 5px;
+}
+@media (min-width: 630px) and (max-width: 720px), (min-width: 1030px) {
+	#add-car {
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(1, 35px);
+	}
+	#add-car button {
+		grid-column-start: 5;
+		grid-column-end: 6;
+	}
+	#update-car {
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(1, 35px);
+	}
+	#delete-car-button {
+		grid-column-start: 5;
+		grid-column-end: 6;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		width: 48%;
+		margin-right: auto;
+	}
+	#update-car-button {
+		grid-column-start: 5;
+		grid-column-end: 6;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		width: 48%;
+		margin-left: auto;
+	}
+	.table-header tbody tr {
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+
+#admin-driver-grid-container {
+	border: 1px solid #ccc;
+    background: #eee;
+    border-radius: 10px;
+    padding: 10px;
+	margin-top: 55px;
+}
+.admin-table-header {
+	width: 100%;
+}
+.admin-table-header tr {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+}
+#admin-driver-form {
+	display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+}
+#admin-driver-form input {
+    width: 100%;
+}
+#admin-driver-form button {
+    height: 35px;
+}
+#admin-driver-form #delete {
+	background: var(--red-color);
+	grid-column-start: 7;
+    grid-column-end: 8;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	width: 48%;
+	margin-right: auto;
+}
+#admin-driver-form #update {
+	grid-column-start: 7;
+    grid-column-end: 8;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	width: 48%;
+	margin-left: auto;
+}
+#admin-car-grid-container {
+	width: 95%;
+    margin: 0 auto 15px auto;
+    border: 1px solid #ccc;
+    border-radius: 0 0 10px 10px;
+    padding: 5px;
+    border-top: none;
+}
+.admin-car-item:last-child {
+	margin-bottom: 0px !important;
+}
