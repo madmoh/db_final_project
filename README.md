@@ -11,3 +11,5 @@ This project was created as the final project for Database Systems (ECCE 434).
 1. Administration page is directly linked and can be accessed with no verification.
 2. Drivers can create accounts with no passwords.
 3. Weak passwords don't prevent creation of account.
+
+##### Feel free to use and edit this project as you like. Please don't claim as your own.
