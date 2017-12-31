@@ -1,6 +1,9 @@
 # db_final_project
 Web application for organizing driver and car data
 
+## About the Project:
+This project was created as the final project for Database Systems (ECCE 434).
+
 ## To use:
 1. The project requires a database servername of 'project'.
 
